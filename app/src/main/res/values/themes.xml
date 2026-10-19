@@ -2,4 +2,14 @@
 <resources>
 
     <style name="Theme.Movies" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <!-- The system draws this before the app starts: TMDB's navy with the
+         launcher logo on it. postSplashScreenTheme is what the activity
+         switches to once it is ready. -->
+    <style name="Theme.Movies.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/tmdb_navy</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.Movies</item>
+    </style>
+
 </resources>
