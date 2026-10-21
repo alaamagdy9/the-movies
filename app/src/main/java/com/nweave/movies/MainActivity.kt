@@ -7,8 +7,11 @@ import androidx.activity.enableEdgeToEdge
 import com.nweave.movies.ui.navigation.MoviesApp
 import com.nweave.movies.ui.theme.MoviesTheme
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-
+import dagger.hilt.android.AndroidEntryPoint
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
