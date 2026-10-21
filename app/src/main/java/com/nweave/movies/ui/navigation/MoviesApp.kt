@@ -28,8 +28,19 @@ fun MoviesApp() {
             NavigationBar {
                 MovieDestination.entries.forEach { destination -> //the 3 entries (search,genre,trending) //go through each one of them
                     NavigationBarItem(
-                        selected = currentRoute == destination.route, //
-                        onClick = { navController.navigate(destination.route) }, //on clicking go to its route
+                        selected = currentRoute == destination.route,
+                        onClick = {
+                            navController.navigate(destination.route) {
+                                // One tab on the stack at a time, so Back leaves the app
+                                // from the first tab instead of walking through every
+                                // tab that was opened.
+                                popUpTo(navController.graph.startDestinationId) {
+                                    saveState = true //if user scrolled till film no 50 save the last state
+                                }
+                                launchSingleTop = true //only 1 instance , not multiple genre even if the user clicked
+                                restoreState = true //return back t the last state(film no 50)
+                            }
+                        },
                         icon = {
                             Icon(
                                 painter = painterResource(destination.icon), //convert the id to icon
