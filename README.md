@@ -102,6 +102,15 @@ The assignment brief asked for search to be a POST. TMDB's documentation says
 searching only reads, so it is a GET. The brief was raised with the mentor
 rather than worked around.
 
+## The assignments
+
+| | |
+| --- | --- |
+| #1 | Splash screen, assets and the three-tab shell |
+| #2 | The TMDB network layer, and trending films in a poster grid |
+| #3 | The genre list |
+| #4 | Live search, and one response envelope shared with trending |
+
 ## Running it
 
 The API key is never committed. Add your own TMDB key to `local.properties`,
